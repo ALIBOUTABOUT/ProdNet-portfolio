@@ -1,0 +1,126 @@
+.solution-section {
+  background: white;
+}
+
+.solution-intro {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  color: white;
+  padding: 35px 40px;
+  border-radius: 16px;
+  margin-bottom: 50px;
+  box-shadow: 0 10px 30px rgba(46, 204, 113, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.solution-intro:hover {
+  transform: scale(1.02);
+}
+
+.solution-intro p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.solution-features {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.solution-feature {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 30px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 12px;
+  border-left: 4px solid #2ecc71;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  animation: slideInLeft 0.5s ease-out both;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.solution-feature:hover {
+  transform: translateX(10px);
+  box-shadow: 0 6px 20px rgba(46, 204, 113, 0.15);
+  border-left-width: 6px;
+}
+
+.feature-marker {
+  width: 12px;
+  height: 12px;
+  background: #2ecc71;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.solution-feature:hover .feature-marker {
+  transform: scale(1.5);
+  box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.2);
+}
+
+.feature-text {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .solution-intro {
+    padding: 30px 25px;
+  }
+
+  .solution-intro p {
+    font-size: 1.05rem;
+  }
+
+  .solution-feature {
+    padding: 20px 25px;
+  }
+
+  .feature-marker {
+    width: 10px;
+    height: 10px;
+  }
+
+  .feature-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .solution-intro {
+    padding: 25px 20px;
+  }
+
+  .solution-intro p {
+    font-size: 1rem;
+  }
+
+  .solution-feature {
+    padding: 18px 20px;
+    gap: 15px;
+  }
+
+  .feature-marker {
+    width: 10px;
+    height: 10px;
+  }
+
+  .feature-text {
+    font-size: 0.95rem;
+  }
+}

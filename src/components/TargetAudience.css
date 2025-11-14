@@ -1,0 +1,104 @@
+.target-audience-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  margin-top: 50px;
+}
+
+.audience-card {
+  background: white;
+  padding: 45px 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid;
+  transition: all 0.4s ease;
+  animation: fadeInScale 0.6s ease-out both;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.audience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.audience-card:hover::before {
+  left: 100%;
+}
+
+.audience-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+}
+
+.audience-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  padding-top: 10px;
+}
+
+.audience-card:hover .audience-title {
+  transform: translateX(5px);
+}
+
+.audience-description {
+  font-size: 1.05rem;
+  color: #5a6c7d;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .audience-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .audience-card {
+    padding: 35px 30px;
+  }
+
+  .audience-title {
+    font-size: 1.5rem;
+  }
+
+  .audience-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .audience-card {
+    padding: 30px 25px;
+  }
+
+  .audience-title {
+    font-size: 1.3rem;
+  }
+
+  .audience-description {
+    font-size: 0.95rem;
+  }
+}

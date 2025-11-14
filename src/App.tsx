@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import Header from './components/Header';
 import Cover from './components/Cover';
 import ProjectIdea from './components/ProjectIdea';
@@ -9,7 +10,8 @@ import TargetAudience from './components/TargetAudience';
 import Features from './components/Features';
 import Contact from './components/Contact';
 
-function App() {
+function AppContent() {
+  const { t } = useLanguage();
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -43,8 +45,8 @@ function App() {
       </main>
       <footer className="footer" id="contact">
         <div className="footer-content">
-          <p>© 2025 Team ProdNet. All rights reserved.</p>
-          <p className="footer-tagline">Connecting producers with investors.</p>
+          <p>{t('footer.rights')}</p>
+          <p className="footer-tagline">{t('footer.tagline')}</p>
           <div className="footer-team">
             <span>Benseba Nourhene</span>
             <span>•</span>
@@ -65,6 +67,14 @@ function App() {
         </svg>
       </button>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
 

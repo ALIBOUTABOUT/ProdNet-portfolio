@@ -1,36 +1,39 @@
 import React from 'react';
 import './Features.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Features: React.FC = () => {
+  const { t } = useLanguage();
+  
   const features = [
     {
-      title: 'Custom Professional Profiles',
-      description: 'Create detailed profiles showcasing your experience, projects, and capabilities with rich media support.'
+      title: t('features.1.title'),
+      description: t('features.1.desc')
     },
     {
-      title: 'Project Presentation Space',
-      description: 'Present your ideas with comprehensive project pages including images, descriptions, and financial needs.'
+      title: t('features.2.title'),
+      description: t('features.2.desc')
     },
     {
-      title: 'Interaction & Messaging',
-      description: 'Direct communication channels between producers and investors for questions, negotiations, and updates.'
+      title: t('features.3.title'),
+      description: t('features.3.desc')
     },
     {
-      title: 'Investment Flow',
-      description: 'Streamlined process for investments with clear terms, milestones, and secure transaction tracking.'
+      title: t('features.4.title'),
+      description: t('features.4.desc')
     },
     {
-      title: 'Rating & Transparency System',
-      description: 'Build trust through verified reviews, ratings, and transparent project progress tracking.'
+      title: t('features.5.title'),
+      description: t('features.5.desc')
     }
   ];
 
   return (
     <section id="features" className="section features-section">
       <div className="section-content">
-        <h2 className="section-title">Main Features</h2>
+        <h2 className="section-title">{t('features.title')}</h2>
         <p className="section-subtitle">
-          Everything you need to connect and collaborate
+          {t('features.subtitle')}
         </p>
         
         <div className="features-grid">
@@ -49,7 +52,7 @@ const Features: React.FC = () => {
         </div>
 
         <div id="screenshots" className="screenshots-section">
-          <h3 className="screenshots-title">App Screenshots</h3>
+          <h3 className="screenshots-title">{t('features.screenshots')}</h3>
           <div className="screenshots-grid">
             <div className="screenshot-item">
               <img src="/screen1.jpg" alt="ProdNet App Screenshot 1" className="screenshot-image" />

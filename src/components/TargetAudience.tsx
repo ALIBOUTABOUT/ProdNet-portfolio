@@ -1,21 +1,24 @@
 import React from 'react';
 import './TargetAudience.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const TargetAudience: React.FC = () => {
+  const { t } = useLanguage();
+  
   const audiences = [
     {
-      title: 'Farmers',
-      description: 'Need visibility and support to grow their agricultural projects and reach investors who understand the value of sustainable farming.',
+      title: t('audience.farmers'),
+      description: t('audience.farmers.desc'),
       color: '#27ae60'
     },
     {
-      title: 'Artisans / Small Industries',
-      description: 'Need funding to grow their craft businesses, scale production, and connect with investors who appreciate handmade quality.',
+      title: t('audience.artisans'),
+      description: t('audience.artisans.desc'),
       color: '#e67e22'
     },
     {
-      title: 'Investors',
-      description: 'Need clear, reliable opportunities to invest in real production projects with transparent evaluation and direct communication.',
+      title: t('audience.investors'),
+      description: t('audience.investors.desc'),
       color: '#3498db'
     }
   ];
@@ -23,9 +26,9 @@ const TargetAudience: React.FC = () => {
   return (
     <section className="section target-audience-section">
       <div className="section-content">
-        <h2 className="section-title">Target Audience</h2>
+        <h2 className="section-title">{t('audience.title')}</h2>
         <p className="section-subtitle">
-          Who benefits from ProdNet
+          {t('audience.subtitle')}
         </p>
         
         <div className="audience-grid">

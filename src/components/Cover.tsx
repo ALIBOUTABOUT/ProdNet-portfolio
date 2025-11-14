@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Cover.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Cover: React.FC = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -42,15 +44,15 @@ const Cover: React.FC = () => {
         
         <div className="cover-content">
           <h1 className="hero-name">
-            <span className="team-label">Team</span>
+            <span className="team-label">{t('cover.team')}</span>
             <span className="prod">Prod</span>
             <span className="net">Net</span>
           </h1>
           
-          <p className="hero-role">Startup Platform Development</p>
+          <p className="hero-role">{t('cover.role')}</p>
           
           <p className="hero-tagline">
-            We don't just connect… we reinvent the rules of the game, where creativity becomes power and every idea turns into reality
+            {t('cover.tagline')}
           </p>
 
           <div className="team-profiles">
@@ -81,8 +83,8 @@ const Cover: React.FC = () => {
           </div>
 
           <div className="cta-buttons">
-            <button onClick={() => scrollToSection('screenshots')} className="btn-primary">View Our App</button>
-            <button onClick={() => scrollToSection('contact-section')} className="btn-secondary">Get In Touch</button>
+            <button onClick={() => scrollToSection('screenshots')} className="btn-primary">{t('cover.viewApp')}</button>
+            <button onClick={() => scrollToSection('contact-section')} className="btn-secondary">{t('cover.getInTouch')}</button>
           </div>
         </div>
 

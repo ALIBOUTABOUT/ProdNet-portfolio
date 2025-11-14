@@ -1,11 +1,14 @@
 import React from 'react';
 import './Contact.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact: React.FC = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="contact-section" className="section contact-section" aria-labelledby="contact-title">
       <div className="section-content">
-        <h2 id="contact-title" className="section-title">Contact</h2>
+        <h2 id="contact-title" className="section-title">{t('contact.title')}</h2>
         
         <div className="contact-methods">
           <a href="mailto:teamprodnet@gmail.com" className="contact-method">
@@ -31,9 +34,9 @@ const Contact: React.FC = () => {
 
         <div className="contact-footer">
           <p className="contact-message">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            {t('contact.description')}
           </p>
-          <a href="mailto:teamprodnet@gmail.com" className="btn-email">Send Me an Email</a>
+          <a href="mailto:teamprodnet@gmail.com" className="btn-email">{t('contact.send')}</a>
         </div>
       </div>
     </section>

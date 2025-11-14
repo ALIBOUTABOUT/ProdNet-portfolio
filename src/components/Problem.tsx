@@ -1,28 +1,31 @@
 import React from 'react';
 import './Problem.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Problem: React.FC = () => {
+  const { t } = useLanguage();
+  
   const problems = [
     {
-      text: 'Producers lack visibility and funding',
-      description: 'Talented farmers and artisans struggle to showcase their work'
+      text: t('problem.1.title'),
+      description: t('problem.1.desc')
     },
     {
-      text: 'Investors struggle to find real, trustworthy opportunities',
-      description: 'Limited access to genuine, vetted production projects'
+      text: t('problem.2.title'),
+      description: t('problem.2.desc')
     },
     {
-      text: 'There is no direct bridge between production and investment',
-      description: 'Traditional channels create barriers and inefficiencies'
+      text: t('problem.3.title'),
+      description: t('problem.3.desc')
     }
   ];
 
   return (
     <section id="problem" className="section problem-section">
       <div className="section-content">
-        <h2 className="section-title">The Problem</h2>
+        <h2 className="section-title">{t('problem.title')}</h2>
         <p className="section-subtitle">
-          Current challenges in the producer-investor ecosystem
+          {t('problem.subtitle')}
         </p>
         
         <div className="problems-grid">

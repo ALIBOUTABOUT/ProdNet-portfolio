@@ -1,27 +1,29 @@
 import React from 'react';
 import './Solution.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Solution: React.FC = () => {
+  const { t } = useLanguage();
+  
   const features = [
-    { text: 'Professional project profiles' },
-    { text: 'A space to showcase ideas' },
-    { text: 'Direct interaction between producers and investors' },
-    { text: 'Transparent project evaluation' },
-    { text: 'A community area to exchange ideas' }
+    { text: t('solution.feature1') },
+    { text: t('solution.feature2') },
+    { text: t('solution.feature3') },
+    { text: t('solution.feature4') },
+    { text: t('solution.feature5') }
   ];
 
   return (
     <section id="solution" className="section solution-section">
       <div className="section-content">
-        <h2 className="section-title">The Solution</h2>
+        <h2 className="section-title">{t('solution.title')}</h2>
         <p className="section-subtitle">
-          How ProdNet bridges the gap
+          {t('solution.subtitle')}
         </p>
         
         <div className="solution-intro">
           <p>
-            ProdNet provides a comprehensive platform that connects producers directly with investors, 
-            eliminating intermediaries and creating transparent, trustworthy relationships.
+            {t('solution.intro')}
           </p>
         </div>
 

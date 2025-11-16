@@ -53,6 +53,8 @@ function AppContent() {
             <span>Abusaada Mohammed</span>
             <span>•</span>
             <span>Boutabout Ali</span>
+            <span>•</span>
+            <span>Bouremana Sara</span>
           </div>
         </div>
       </footer>
